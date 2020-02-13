@@ -1,0 +1,44 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>Add new product</mat-card-title>
+    <form [formGroup]="productForm" autocomplete="off" novalidate (ngSubmit)="createProduct(productForm.value)"
+      fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card-content>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Code" formControlName="code" id="code">
+          <mat-hint align="end">Not more then 100 characters long.</mat-hint>
+          <mat-error *ngIf="hasError('code', 'required')">Code is required</mat-error>
+          <mat-error *ngIf="hasError('code', 'maxlength')">You have more than 100 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Name" formControlName="name" id="name">
+          <mat-hint align="end">Not more then 250 characters long.</mat-hint>
+          <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+          <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 250 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Price" formControlName="price" id="price">
+          <mat-hint align="end">Price should be between 1,00 - 999,00</mat-hint>
+          <mat-error *ngIf="hasError('price', 'required')">Price is required</mat-error>
+          <!-- <span class="invalid" *ngIf="(price.dirty || price.touched) && price.invalid && price.errors.invalidPrice">
+            Price exceed 999.00
+          </span> -->
+        </mat-form-field>
+
+        <div class="imageUpload">
+          <img [src]="imageSrc" (load)="handleImageLoad()" [class.loaded]="imageLoaded" />
+        </div>
+        <input type="file" id="file" name="file" accept="image/*" (change)="photoInputChange($event)">
+
+      </mat-card-content>
+
+      <mat-card-actions align="center">
+        <button mat-raised-button color="primary" [disabled]="!productForm.valid">Add</button>
+        <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

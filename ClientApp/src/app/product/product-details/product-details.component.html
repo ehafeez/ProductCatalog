@@ -1,0 +1,34 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title><strong>Product Details</strong></mat-card-title>
+    <mat-card-content>
+      <div fxLayout="column wrap" fxLayoutGap="40px">
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Code:</strong></div>
+          <div fxFlex>{{product?.code}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Name:</strong></div>
+          <div fxFlex>{{product?.name}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Price:</strong></div>
+          <!-- <div fxFlex>{{product?.price | currency:'EUR':'symbol' }}</div> -->
+          <div fxFlex>{{product?.price | currency: 'EUR':true:'3.2-5'}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Updated At:</strong></div>
+          <div fxFlex>{{product?.lastUpdated | date:'MMM d, y h:mm:ss a'}}</div>
+        </div>
+
+        <div class="imageUpload" *ngIf="imageSrc && imageSrc !== ''">
+          <img [src]="imageSrc" (load)="handleImageLoad()" [class.loaded]="imageLoaded" />
+        </div>
+
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
