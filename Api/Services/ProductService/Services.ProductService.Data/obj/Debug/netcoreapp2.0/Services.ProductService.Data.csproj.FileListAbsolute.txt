@@ -1,0 +1,16 @@
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Data.deps.json
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Data.runtimeconfig.json
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Data.runtimeconfig.dev.json
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Data.dll
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Data.pdb
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.dll
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Core.dll
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\Services.ProductService.Core.pdb
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\bin\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.pdb
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.csprojAssemblyReference.cache
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.csproj.CoreCompileInputs.cache
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.AssemblyInfoInputs.cache
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.AssemblyInfo.cs
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.csproj.CopyComplete
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.dll
+C:\POC\ProductCatalogApi\Api\Services\ProductService\Services.ProductService.Data\obj\Debug\netcoreapp2.0\Services.ProductService.Data.pdb

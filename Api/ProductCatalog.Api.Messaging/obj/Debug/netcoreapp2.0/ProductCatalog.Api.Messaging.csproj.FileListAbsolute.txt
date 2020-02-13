@@ -1,0 +1,9 @@
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\bin\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.deps.json
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\bin\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.dll
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\bin\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.pdb
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\obj\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.csprojAssemblyReference.cache
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\obj\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.csproj.CoreCompileInputs.cache
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\obj\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.AssemblyInfoInputs.cache
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\obj\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.AssemblyInfo.cs
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\obj\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.dll
+C:\POC\ProductCatalogApi\Api\ProductCatalog.Api.Messaging\obj\Debug\netcoreapp2.0\ProductCatalog.Api.Messaging.pdb
