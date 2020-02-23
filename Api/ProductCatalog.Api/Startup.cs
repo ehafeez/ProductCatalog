@@ -36,16 +36,16 @@ namespace ProductCatalog.Api
         {
             services.AddCors(options => options.AddPolicy("Cors", builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }));
             services.AddSingleton(ConfigurationRoot);
+
+            //Swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Product Catalog API", Version = "v1"});
             });
 
             services.Configure<ServiceBusSettings>(options => ConfigurationRoot.GetSection("ServiceBus").Bind(options));
-            services.Configure<ServiceBusQueuesSettings>(options =>
-                ConfigurationRoot.GetSection("ServiceBusQueues").Bind(options));
-            services.Configure<ConnectionStringSettings>(options =>
-                ConfigurationRoot.GetSection("ConnectionStrings").Bind(options));
+            services.Configure<ServiceBusQueuesSettings>(options => ConfigurationRoot.GetSection("ServiceBusQueues").Bind(options));
+            services.Configure<ConnectionStringSettings>(options => ConfigurationRoot.GetSection("ConnectionStrings").Bind(options));
 
             var serviceBusSettings = new ServiceBusSettings();
             ConfigurationRoot.GetSection("ServiceBus").Bind(serviceBusSettings);
@@ -76,7 +76,10 @@ namespace ProductCatalog.Api
             services.AddMemoryCache();
             services.AddOptions();
             services.AddMvc();
+            services.AddHealthChecks(); //Health check
+            services.AddHealthChecksUI(); //Health check User interface
 
+            //Api Versioning
             services.AddApiVersioning(version =>
             {
                 version.AssumeDefaultVersionWhenUnspecified = true;
@@ -103,8 +106,13 @@ namespace ProductCatalog.Api
             loggerFactory.AddConsole(ConfigurationRoot.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseSwagger();
+            //Swagger
+            app.UseSwagger(); 
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product Catalog Api V1"); });
+            
+            app.UseHealthChecks("/health"); //Health check
+            app.UseHealthChecksUI(config => config.UIPath = "/health-ui"); //Health check user interface
+
             app.UseMvc();
 
             //start micro services

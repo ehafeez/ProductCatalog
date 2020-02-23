@@ -84,8 +84,8 @@ namespace Services.ProductService.Core.Models
             if (string.IsNullOrWhiteSpace(Name))
                 Errors.Add(new Error("Name", "Field must not be empty"));
 
-            if (string.IsNullOrWhiteSpace(BlobName))
-                Errors.Add(new Error("BlobName", "Field must not be empty"));
+            //if (string.IsNullOrWhiteSpace(BlobName))
+            //    Errors.Add(new Error("BlobName", "Field must not be empty"));
 
             if (string.IsNullOrWhiteSpace(PhotoName))
                 Errors.Add(new Error("Photo Name", "Field must not be empty"));

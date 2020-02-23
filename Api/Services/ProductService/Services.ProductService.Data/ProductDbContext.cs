@@ -6,6 +6,7 @@ namespace Services.ProductService.Data
     public class ProductDbContext : DbContext
     {
         private readonly string _connectionString;
+
         public ProductDbContext()
         {
         }
