@@ -86,6 +86,16 @@ namespace ProductCatalog.Api
                 version.DefaultApiVersion = new ApiVersion(1, 0);
                 version.ReportApiVersions = true;
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+            
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,
