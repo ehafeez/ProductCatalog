@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '1',
         code: 'Quinn',
         name: 'Nixon',
-        photo: 'qnixon@gmail.com',
+        photo: '22222222222222222222222',
         price: 20.5,
         lastUpdated: '10.20.2018'
       },
@@ -21,7 +21,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '2',
         code: 'Eric',
         name: 'Smith',
-        photo: 'esmith@gmail.com',
+        photo: '22222222222222222222222',
         price: 10.5,
         lastUpdated: '10.20.2018'
       },
@@ -29,35 +29,35 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '3',
         code: 'Carlson',
         name: 'Cox',
-        photo: 'ccox@gmail.com',
+        photo: '22222222222222222222222',
         price: 14,
         lastUpdated: '10.20.2018'
       }, {
         id: '4',
         code: 'Kelsea',
         name: 'Kelly',
-        photo: 'kkelly@gmail.com',
+        photo: '22222222222222222222222',
         price: 23.9,
         lastUpdated: '10.20.2018'
       }, {
         id: '5',
         code: 'Aino',
         name: 'Uno',
-        photo: 'auno@gmail.com',
+        photo: '22222222222222222222222',
         price: 78.3,
         lastUpdated: '10.20.2018'
       }, {
         id: '6',
         code: 'Amy',
         name: 'Little',
-        photo: 'alittle@gmail.com',
+        photo: '22222222222222222222222',
         price: 22.54,
         lastUpdated: '10.20.2018'
       }, {
         id: '7',
         code: 'Doris',
         name: 'Chandler',
-        photo: 'dchandler@gmail.com',
+        photo: '22222222222222222222222',
         price: 77.33,
         lastUpdated: '10.20.2018'
       }

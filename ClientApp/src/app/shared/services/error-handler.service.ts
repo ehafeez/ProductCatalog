@@ -25,6 +25,10 @@ export class ErrorHandlerService {
     }
   }
 
+  public showErrorMessage(message: string) {
+    this.handleErrorMessage(message);
+  }
+
   private handle500Error(error: HttpErrorResponse) {
     this.createErrorMessage(error);
     this.router.navigate(['/500']);
@@ -38,6 +42,11 @@ export class ErrorHandlerService {
   private handleOtherError(error: HttpErrorResponse) {
     this.createErrorMessage(error);
     this.dialogConfig.data = { 'errorMessage': this.errorMessage };
+    this.dialog.open(ErrorDialogComponent, this.dialogConfig);
+  }
+
+  private handleErrorMessage(error: string) {
+    this.dialogConfig.data = { 'errorMessage': error };
     this.dialog.open(ErrorDialogComponent, this.dialogConfig);
   }
 

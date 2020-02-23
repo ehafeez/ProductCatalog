@@ -20,8 +20,10 @@
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput type="text" placeholder="Price" formControlName="price" id="price">
-          <mat-hint align="end">Price should be between 1,00 - 999,00</mat-hint>
+          <input id="price" currencyMask matInput [options]="{ prefix: '€ ', thousands: '.', decimal: ',' }" min="0.00"
+            #currency matInput type="text" placeholder="Price" formControlName="price" />
+
+          <mat-hint align="end">Price should be greater or equal 1,00</mat-hint>
           <mat-error *ngIf="hasError('price', 'required')">Price is required</mat-error>
           <!-- <span class="invalid" *ngIf="(price.dirty || price.touched) && price.invalid && price.errors.invalidPrice">
             Price exceed 999.00

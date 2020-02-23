@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, LOCALE_ID, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ErrorHandlerService } from 'src/app/shared/services/error-handler.service';
@@ -20,7 +20,7 @@ export class ProductDetailsComponent implements OnInit {
     this.selectEmitt.emit(event.value);
   }
 
-  constructor(private productService: ProductService, private location: Location,
+  constructor(private productService: ProductService, private location: Location, @Inject(LOCALE_ID) locale: string,
     private activeRoute: ActivatedRoute, private errorHandler: ErrorHandlerService) { }
 
   ngOnInit() {

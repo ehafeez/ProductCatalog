@@ -7,7 +7,6 @@ import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/su
 import { ProductService } from 'src/app/shared/services/product.service';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ConfirmationDialogComponent } from 'src/app/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
-import { HttpClient } from '@angular/common/http';
 import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
@@ -38,15 +37,15 @@ export class ProductAddComponent implements OnInit {
     });
 
     this.dialogConfig = {
-      height: '200px',
-      width: '300px',
+      height: '300px',
+      width: '400px',
       disableClose: true,
       data: {}
     }
 
     this.confirmDialogConfig = {
-      height: '200px',
-      width: '300px',
+      height: '250px',
+      width: '320px',
       data: {}
     };
   }
@@ -64,7 +63,7 @@ export class ProductAddComponent implements OnInit {
     if (this.productForm.valid) {
 
       if (formValue.price > 999.00) {
-        this.confirmDialogConfig.data = { 'confirmationMessage': 'Are you sure to add price: ' + formValue.price }
+        this.confirmDialogConfig.data = { 'confirmationMessage': formValue.price }
         let confirmDialog = this.dialog.open(ConfirmationDialogComponent, this.confirmDialogConfig);
 
         confirmDialog.afterClosed().subscribe(result => {
@@ -89,10 +88,16 @@ export class ProductAddComponent implements OnInit {
 
   addProduct() {
     this.productService.addProduct(this.getProduct()).subscribe(result => {
-      let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
-      dialogRef.afterClosed().subscribe(result => {
-        this.location.back();
-      });
+      if (!!result && !!result.errors) {
+        this.errorService.dialogConfig = { ...this.dialogConfig };
+        this.errorService.showErrorMessage(result.errors[0].message);
+      }
+      else {
+        let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
+        dialogRef.afterClosed().subscribe(result => {
+          this.location.back();
+        });
+      }
     },
       (error => {
         this.errorService.dialogConfig = { ...this.dialogConfig };

@@ -44,7 +44,7 @@ export class ProductUpdateComponent implements OnInit {
     }
 
     this.confirmDialogConfig = {
-      height: '220px',
+      height: '250px',
       width: '350px',
       data: {}
     };
@@ -73,7 +73,6 @@ export class ProductUpdateComponent implements OnInit {
         this.productForm.patchValue(this.product);
         const ext = this.product.photoName.split('.')[1].toString().toLowerCase();
         this.imageSrc = `data:image/${ext};base64,${this.product.photo}`;
-
       },
         (error) => {
           this.errorService.dialogConfig = this.dialogConfig;
@@ -86,7 +85,7 @@ export class ProductUpdateComponent implements OnInit {
     if (this.productForm.valid) {
 
       if (formValue.price > 999.00) {
-        this.confirmDialogConfig.data = { 'confirmationMessage': 'Are you sure to update price: ' + formValue.price }
+        this.confirmDialogConfig.data = { 'confirmationMessage': formValue.price }
         let confirmDialog = this.dialog.open(ConfirmationDialogComponent, this.confirmDialogConfig);
 
         confirmDialog.afterClosed().subscribe(result => {

@@ -45,11 +45,10 @@ export class ProductService {
    * POST: add a new product to the database
    */
   addProduct(product: Product): Observable<any> {
-    return this.httpClient
-      .post<Product>(`${this.productApi}createProduct`, product, httpOptions)
-      .pipe(tap((product: Product) => this.notify(`new product added id=${product.id}`, 'POST')),
-        catchError(this.showError('addProduct'))
-      );
+    return this.httpClient.post<Product>(`${this.productApi}createProduct`, product, httpOptions);
+      // .pipe(tap((product: Product) => this.notify(`new product added id=${product.id}`, 'POST')),
+      //   catchError(this.showError('addProduct'))
+      // );
   }
 
   /**

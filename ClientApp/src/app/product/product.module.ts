@@ -8,13 +8,15 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   imports: [
     CommonModule,
     ProductRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    CurrencyMaskModule
   ],
   declarations: [ProductListComponent, ProductDetailsComponent, ProductAddComponent, ProductUpdateComponent, ProductDeleteComponent]
 })

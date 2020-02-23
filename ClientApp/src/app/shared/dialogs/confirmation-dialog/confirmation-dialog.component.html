@@ -1,7 +1,8 @@
 <section fxLayout="column" fxLayoutAlign="center center">
   <h1 mat-dialog-title>Confirmation Required</h1>
   <mat-dialog-content>
-    <p>{{data.confirmationMessage}}</p>
+    <p>Are you sure to add price: </p>
+    <p>{{data.confirmationMessage | currency: 'EUR':true:'3.2-3'}}</p>
   </mat-dialog-content>
   <mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="onYesClick()" tabindex="1">Yes</button>
