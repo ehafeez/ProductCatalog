@@ -58,8 +58,7 @@ namespace ProductCatalog.Api.Controllers
             }
         }
 
-        [HttpGet, ProducesResponseType(StatusCodes.Status200OK),
-         ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpGet, ProducesResponseType(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetProductById([FromQuery(Name = "productId")] string productId)
         {
             try
@@ -144,8 +143,7 @@ namespace ProductCatalog.Api.Controllers
         }
 
         [HttpDelete("{id}"), ProducesResponseType(StatusCodes.Status200OK),
-         ProducesResponseType(StatusCodes.Status404NotFound),
-         ProducesResponseType(StatusCodes.Status400BadRequest),
+         ProducesResponseType(StatusCodes.Status404NotFound), ProducesResponseType(StatusCodes.Status400BadRequest),
          ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<IActionResult> DeleteProduct(string id)
         {

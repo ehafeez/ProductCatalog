@@ -1,15 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk;Microsoft.NET.Sdk.Publish">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="appsettings.Development.json" />
     <None Remove="appsettings.json" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="appsettings.Development.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -18,7 +15,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Enchilada" Version="1.1.0" />
     <PackageReference Include="Enchilada.Azure" Version="1.1.0" />
@@ -33,11 +29,14 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\..\ProductCatalog.Api.Messaging\ProductCatalog.Api.Messaging.csproj" />
     <ProjectReference Include="..\Services.ProductService.Data\Services.ProductService.Data.csproj" />
     <ProjectReference Include="..\Services.ProductService.Repository\Services.ProductService.Repository.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Update="Settings.job">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
